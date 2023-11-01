@@ -39,7 +39,7 @@
 </head>
 
 <body>
-   <?php 
+    <?php 
     /*
         [ 외부파일을 php에 삽입하기 ]
         1. include : 예) <?php include "경로/파일명" ?>
@@ -62,8 +62,7 @@
         - 그밖에 html, php 파일도 불러올 수 있다!
     */
     ?>
-   
-   
+
     <!--1.탑영역-->
     <?php include "inc/top.inc" ?>
     <!--2.본문영역-->
