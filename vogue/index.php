@@ -30,6 +30,9 @@
         <script type="module" src="./js/main.js"></script>
     </head>
     <body>
+        <!-- 로그인 처리 인클루드 파일 호출 -->
+        <?php include "inc/login_session.inc" ?>
+        
         <!-- 1.상단영역 -->
         <?php include "inc/top_area.inc" ?>
         <!-- 2.메인영역 -->
