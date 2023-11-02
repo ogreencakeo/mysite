@@ -81,8 +81,9 @@ session_start();
           // 대상: .sns a:eq(5)
           $(".sns a").eq(5).remove();
           
-        // 5. auth 권한 값이 "A"일 경우 
+        // 5. auth 권한 값이 "A"일 경우 또는 "S"일 경우
         //    "관리자" 메뉴 생성하여 추가하기
+        // A - Admin / S - Super Admin / M -Member
         if (auth === "A" || auth === "S") {
             $(".sns")
                 .append(
@@ -90,8 +91,7 @@ session_start();
                   <a href="#" class="fi fi-user-secret" title="관리자" style="color:red">
                       <span class="ir"> 관리자 </span>
                   </a>                  
-                  `
-                    
+                  `  
                 );
 
             // 관리자 페이지 링크설정
