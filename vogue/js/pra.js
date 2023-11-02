@@ -50,11 +50,44 @@ form.logF input[type=password]`)
                 data : {'mid' : $('#mid').val()},
                 dataType : 'html',
                 async : false,
-                
+                sucess : function(res){
+                    if(res == 'ok'){
+                        $('#mid').siblings('.msg').text('멋진 아이디네요~').addClass('on');
+                    }else{
+                        $('#mid').siblings('.msg').removeClass('on');
+                        pass = false;
+                        console.log('중복 아이디')
+                    }
+                },
+                error : function(xhr, status, error){
+                    alert('연결처리 실패 :' + error);
+                }
             })
         }
-    }else if(cv = 'pw')
-})
+    }else if(cid == 'mpw'){
+        if(!vReg(cv, cid)){
+            $(this).siblings('.msg').text('특수문자,문자,숫자포함 형태의 5~15자리');
+            pass = false;
+        }else{
+            $(this).siblings('.msg').empty();
+        }
+    }else if(cid == 'mpw2'){
+        if(cv != $('#mpw').val()){
+            $(this).siblings('.msg').text('비밀번호가 일치하지 않습니다!');
+            pass = false;
+        }else{
+            $(this).siblings('.msg').empty();
+        }
+    }else if(cid == 'email1'){
+        let comp = eml1.val() + '@' + 
+        (seleml.val() == 'free'? eml2.val() : seleml.val())
+        
+    }
+});
+
+const eml1 = $('#email1');
+const eml2 = $('#email2');
+const seleml = $('#seleml');
 
 
 function vReg(val, cid) {
