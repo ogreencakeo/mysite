@@ -89,6 +89,15 @@ const eml1 = $('#email1');
 const eml2 = $('#email2');
 const seleml = $('#seleml');
 
+seleml.change(function(){
+    let cv = $(this).val();
+    if(cv == 'init'){
+        eml1.siblings('.msg').text('이메일 옵션 선택 필수').removeClass('on');
+        eml2.fadeOut(300);
+    }else if(cv == 'free'){
+        
+    }
+})
 
 function vReg(val, cid) {
     // val - 검사할값, cid - 처리구분아이디
